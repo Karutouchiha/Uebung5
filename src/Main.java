@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application{
     public static void main(String[] args) {
-        System.out.print("Moin Leute");
         Application.launch(args);
     }
 
@@ -22,11 +21,15 @@ public class Main extends Application{
     public void start(Stage stage) throws Exception {
         VBox vbox = new VBox();
         ObservableList box_list = vbox.getChildren();
-
+        String style = new String("-fx-font-size:20;-fx-font-weight: bold");
         Label Celsius = new Label("Grad Celsius");
+        Celsius.setStyle(style);
         TextField field1 = new TextField();
+        field1.setStyle(style);
         Label Fahrenheit = new Label("Grad Fahrenheit");
+        Fahrenheit.setStyle(style);
         TextField field2 = new TextField();
+        field2.setStyle(style);
         box_list.add(Celsius);
         box_list.add(field1);
         box_list.add(Fahrenheit);
@@ -34,6 +37,8 @@ public class Main extends Application{
 
         Button b1 = new Button("Convert C --> F");
         Button b2 = new Button("Convert F --> C");
+        b1.setStyle(style);
+        b2.setStyle(style);
         box_list.add(b1);
         box_list.add(b2);
 
@@ -52,7 +57,7 @@ public class Main extends Application{
         b1.addEventHandler(MouseEvent.MOUSE_CLICKED,handler1);
         b2.addEventHandler(MouseEvent.MOUSE_CLICKED,handler2);
 
-        Scene scene = new Scene(vbox,200,200, Color.ORANGE);
+        Scene scene = new Scene(vbox,240,240, Color.ORANGE);
         stage.setScene(scene);
         stage.setTitle("Temp.Converter");
         stage.show();
