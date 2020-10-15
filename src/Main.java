@@ -12,7 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.text.DecimalFormat;
-import java.text.Format;
 
 
 public class Main extends Application{
