@@ -45,7 +45,9 @@ public class Main extends Application{
         EventHandler handler1 = new EventHandler() {
             @Override
             public void handle(Event event) {
-
+                //Celsius in Fahrenheit 32+5*1,8
+                int c = Integer.parseInt(field1.getText());
+                field2.setText(Double.toString(32+c*1.8));
             }
         };
         EventHandler handler2 = new EventHandler() {
