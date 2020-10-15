@@ -11,6 +11,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.text.DecimalFormat;
+import java.text.Format;
+
 
 public class Main extends Application{
     public static void main(String[] args) {
@@ -53,7 +56,10 @@ public class Main extends Application{
         EventHandler handler2 = new EventHandler() {
             @Override
             public void handle(Event event) {
-
+                //Fahrenheit in Celsius -17.8+5*1,8
+                DecimalFormat form = new DecimalFormat("#0.00");
+                int f =Integer.parseInt(field2.getText());
+                field1.setText(form.format((f-32)/1.8));
             }
         };
         b1.addEventHandler(MouseEvent.MOUSE_CLICKED,handler1);
